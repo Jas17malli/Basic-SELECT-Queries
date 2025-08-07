@@ -25,40 +25,47 @@ Person_id int,
 FOREIGN key (person_id) REFERENCES  Person(Person_id));
 
 ---Retrieve all columns from both Person and Passport.
+
 Select * from Person;
 Select * from Passport;
 
 ---Retrieve Specific columns from both Person and Passport.
+
 Select Passport_id from passport;
 select Name from person;
 
---Filtering with WHERE
---Find all passports issued in 2025.
+--Filtering with WHERE Find all passports issued for 101,103,104.
+
 select * from passport where passport_id in('101','103','104');
 
 --Find entries where the passport was issued in 2025 and the person's name starts with "J"
+
 Select * from person where name like 'J%';
 
 --Select passports issued between '2023-06-01' and '2023-12-31'.
+
 Select * from passport where issue_date between '2023-06-01' and '2023-12-31';
 
 --Order by
+
 SELECT * FROM Person
 ORDER BY Name;
 
 --Retrieve the top 3 most recently issued passports.
+
 select  * from passport 
 order by 2 desc
 fetch First 3 rows only;
 
 ---Show passport records 4–6 by applying ORDER BY with LIMIT and OFFSET.
+
 Select * from passport
 order by 1
 limit 2 offset 3;
 
 
----List the Name and Issue_date of individuals who have a Person_id of 3 or 4, 
---and their passport was issued either before '2023-03-01' or after '2023-06-01'.
+---List the Name and Issue_date of individuals who have a Person_id of 3 or 4, and their passport was issued either before '2023-03-01' or after '2023-06-01'.
+
 SELECT p.Name, ps.Issue_date
 FROM Person p, Passport ps
 WHERE p.Person_id = ps.Person_id
