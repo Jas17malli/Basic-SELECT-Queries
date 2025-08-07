@@ -10,7 +10,9 @@ Task 3: Writing Basic SELECT Queries
  1.Use SELECT * and specific columns
  2.Apply WHERE, AND, OR, LIKE, BETWEEN
  3.Sort with ORDER BY
- Outcome:Clear understanding of how to retrieve data
+ Outcome:Clear understanding of how to retrieve data.
+
+I have created two tables, inserted data into them, and retrieved the data using SELECT queries
 
 --Creted two tables.
 
